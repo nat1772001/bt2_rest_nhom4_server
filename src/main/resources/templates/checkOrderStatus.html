@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Check Status</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" th:href="@{/css/editCustomer.css}">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+	<header>
+		<div class="navbar">
+			<a th:href="@{/}">Home</a>
+			<a th:href="@{/checkOrderStatus}">Check Order Status</a>
+		</div>
+	</header>
+	<form th:action="@{/orderStatus}" method="get">
+		<div class="wrapper">
+			<div class="form-login">
+				<label class="title">Check Order Status</label>
+				<div class="form-group">
+					<label class="label">Order Number:</label>
+					<input type="text" th:value="${orderNumber}" name="orderNumber" class="form-input" placeholder="Enter order ID...." required />
+				</div>
+				<div class="form-group">
+					<label class="label">Company ID:</label>
+					<input type="text" th:value="${companyID}" name="companyID" class="form-input" placeholder="Enter company..." required>
+				</div>
+				
+				<label th:text="${mess}" class="label"></label>
+				<input type="submit" value="Check" class="form-submit">
+			</div>
+		</div>
+	</form>
+</body>
+
+</html>
